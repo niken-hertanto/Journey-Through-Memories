@@ -1,0 +1,118 @@
+a:link {
+    text-decoration: none;
+    color: mediumpurple;
+}
+
+a:visited {
+    color: plum;
+}
+
+a:hover {
+    color: royalblue;
+}
+
+h2 {
+    text-transform: uppercase;
+    vertical-align: center;
+    font-size: 40px;
+    color: rebeccapurple;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding-left: 400px;
+    padding-top: 18px;
+}
+
+h3 {
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    vertical-align: center;
+    padding-left: 400px;
+}
+
+h4 {
+    font-size: 18px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    vertical-align: center;
+    padding-left: 400px;
+    padding-right: 20px;
+}
+
+h5 {
+    vertical-align: center;
+    padding-left: 400px;
+}
+
+li {
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+}
+
+p {
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    vertical-align: center;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+    word-spacing: 0.05em;
+    padding-left: 400px;
+    padding-right: 20px;
+}
+
+div {
+    padding-top: 20px;
+}
+
+#HeaderText li{
+    display: inline;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 0.15em;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#HeaderText ul {
+    text-align: center;
+}
+
+header {
+    background-color: rgb(98, 75, 117);
+    z-index: 10;
+    padding: 3px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+}
+
+#HeaderText a:link {
+    text-decoration: none;
+    color: white;
+}
+
+#HeaderText a:visited {
+    color: plum;
+}
+
+#HeaderText a:hover {
+    color: lightblue;
+}
+
+#Banner {
+    float: left;
+    padding-top: 68px;
+}
+
+#Title {
+    width: 100%;
+    padding-top: 50px;
+}
+
+#Logo a {
+    padding-right: 60px;
+}
+
+#Team {
+    padding-bottom: 200px;
+}
