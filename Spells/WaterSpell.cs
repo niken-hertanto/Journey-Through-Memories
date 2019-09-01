@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class WaterSpell : MonoBehaviour {
 
+    /* ********************************************
+     *      When the player casts "Water"
+     *********************************************** */
+
+    //helps control how long the animation last
     private Animator anim;
     private float clock;
-    private bool timeFlagWater, timeFlagIce, flowerFlag, animFlag;
-    private GameObject[] flowers;
+    private bool timeFlagWater, timeFlagIce, animFlag;
+
+    //This was used where flowers where the player casts "water", but in the end this was not used.
+    private bool flowerFlag;
+    private GameObject[] flowers; //different kinds of flowers would appear
     private GameObject[] waters;
     private bool flowerCheck;
+    public Transform yellowFlower; //Prefab yellow flower for testing
 
-    public Transform yellowFlower; //Prefab yellow flower
-
+    //grants access to the speech recognition software
     SpeechRecognition01 speech;
+    //used to access Vivi, the water/ice animations and particle systems
     GameObject vivi, earthing, iceDrops, rainDrops, sparkles, mist;
 
     void Start()
@@ -32,12 +41,16 @@ public class WaterSpell : MonoBehaviour {
         mist = GameObject.Find("mist");
         flowerCheck = false;
     }
+
     // Update is called once per frame
     void Update()
     {
-        // When the player casts fire, the fire animation works
+        // When the player casts water, the water animation starts
         if (speech.word == "water" || speech.word == "ice")
         {
+            // We wanted for flowers to "grow" wherever the player casts "water." But due to uneven terrain, watery areas (aka, flowers shouldn't grow here),
+            //  deadlines (this would've just been a nice "touch"), etc, we decided to opt out.
+
             //if (flowerFlag && speech.word == "water" && gameObject.tag == "WaterAnim")
             //{
             //    Debug.Log("ARe you working?");
@@ -59,17 +72,21 @@ public class WaterSpell : MonoBehaviour {
             //        }
             //    }
             //}
+
             anim.speed = 1.2f;
             anim.Play("CloudAnim", 0, 0);
             clock = 0f;
             animFlag = true;
+            
+            //Checks to see whether the player casts "water" or "ice"
             if (speech.word == "water") { timeFlagWater = true; }
             else { timeFlagIce = true; }
         }
 
-        // Makes the water spell "disappear" once the animation is done
+        // Checks if the animation is on, and starts the timer to check when the animation will be done
         if (animFlag) { clock += Time.deltaTime; }
 
+        // Makes the water spell "disappear" once the animation is done
         if (clock > 2f && timeFlagWater)
         {
             rainDrops.GetComponent<ParticleSystem>().Stop();
@@ -84,7 +101,7 @@ public class WaterSpell : MonoBehaviour {
             flowerCheck = true;
         }
 
-        // Turns on water spell
+        // Makes the ice spell "disappear" once the animation is done
         if (clock > 2f && timeFlagIce)
         {
             iceDrops.GetComponent<ParticleSystem>().Stop();
